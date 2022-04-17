@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
-<mapper namespace="com.example.parkingSystem.mapper.ParkingLotMapper">
+<mapper namespace="com.example.CloseContactSearcher.mapper.ParkingLotMapper">
     <select id="findChargeRuleByParkingLotId" resultType="java.util.Map">
         SELECT
             c.operator,
@@ -12,7 +12,7 @@
         WHERE pl.parking_lot_id = #{parkingLotId}
     </select>
 
-    <select id="findAllCommentByParkingLotId" resultType="com.example.parkingSystem.entity.Comment">
+    <select id="findAllCommentByParkingLotId" resultType="com.example.CloseContactSearcher.entity.Comment">
         SELECT
             c.comment_id,
             c.content,
