@@ -1,14 +1,27 @@
 package com.example.CloseContactSearcher.service.impl;
 
+import com.example.CloseContactSearcher.entity.Close;
+import com.example.CloseContactSearcher.mapper.CloseMapper;
 import com.example.CloseContactSearcher.service.CloseService;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+
+import javax.annotation.Resource;
+import java.util.List;
+import java.util.Map;
 
 @Transactional
 @Service("closeService")
 public class CloseServiceImpl implements CloseService {
 
-//    @Resource
+    @Resource
+    private CloseMapper closeMapper;
+
+    @Override
+    public List<Close> findCloseByMap(Map<String, Object> map) {
+        return closeMapper.selectByMap(map);
+    }
+    //    @Resource
 //    private InfoMapper infoMapper;
 //
 //    @Override

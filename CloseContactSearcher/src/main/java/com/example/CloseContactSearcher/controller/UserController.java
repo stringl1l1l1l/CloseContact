@@ -75,7 +75,7 @@ public class UserController {
             return new ResponseResult<>(200, "操作成功");
     }
 
-    @PreAuthorize(value = "hasAuthority('sys:post')")
+    @PreAuthorize(value = "hasAuthority('sys:user')")
     @ApiOperation("根据请求体中的键值对查询满足条件的所有用户, 例如：{ 'car_num'(列名) : *******(值) }" )
     @PostMapping("/findUsersByMap")
     public ResponseResult findUsersByMap(@RequestBody Map<String, Object> map){
