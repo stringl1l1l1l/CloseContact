@@ -26,8 +26,8 @@ public class UserDetailsServiceImpl implements UserDetailsService {
     private MenuMapper menuMapper;
 
     @Override
-    public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
-        User user = userMapper.selectOne(new LambdaQueryWrapper<User>().eq(User::getUsername, username));
+    public UserDetails loadUserByUsername(String account) throws UsernameNotFoundException {
+        User user = userMapper.selectOne(new LambdaQueryWrapper<User>().eq(User::getAccount, account));
         if(Objects.isNull(user)){
             throw new UsernameNotFoundException("用户不存在");
         }
